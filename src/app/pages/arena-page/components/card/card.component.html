@@ -1,0 +1,44 @@
+<mat-card *ngIf="card" class="example-card" [ngSwitch]="gameType">
+  <span *ngIf="winner" id="winner-indicator">
+    <mat-icon>emoji_events</mat-icon>
+  </span>
+  <ng-container *ngSwitchCase="SWAPI_ENTITY_TYPE.PEOPLE">
+    <mat-card-header>
+      <mat-card-title><h2>Name: {{card.name}}</h2></mat-card-title>
+      <mat-card-subtitle>Gender: {{card.gender}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="image" alt="Photo of {{gameType}}">
+    <mat-card-content>
+      <p [ngClass]="{'glow': winner}">Mass: {{card.mass}}</p>
+      <p>Birth Date: {{card.birth_year}}</p>
+      <p>Gender: {{card.gender}}</p>
+      <p>Height: {{card.height}}</p>
+    </mat-card-content>
+  </ng-container>
+  <ng-container *ngSwitchCase="SWAPI_ENTITY_TYPE.STARSHIPS">
+    <mat-card-header>
+      <mat-card-title><h2>Name: {{card.name}}</h2></mat-card-title>
+      <mat-card-subtitle>Model: {{card.model}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="image" alt="Photo of {{gameType}}">
+    <mat-card-content>
+      <p [ngClass]="{'glow': winner}">Cost: {{card.cost_in_credits}}</p>
+      <p>Crew: {{card.crew}}</p>
+      <p>Manufacturer: {{card.manufacturer}}</p>
+      <p>Starship class: {{card.starship_class}}</p>
+    </mat-card-content>
+  </ng-container>
+  <ng-container *ngSwitchCase="SWAPI_ENTITY_TYPE.PLANETS">
+    <mat-card-header>
+      <mat-card-title><h2>Name: {{card.name}}</h2></mat-card-title>
+      <mat-card-subtitle>Terrain: {{card.terrain}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="image" alt="Photo of {{gameType}}">
+    <mat-card-content>
+      <p [ngClass]="{'glow': winner}">Diameter: {{card.diameter}}</p>
+      <p>Population: {{card.population}}</p>
+      <p>Climate: {{card.climate}}</p>
+      <p>Gravity: {{card.gravity}}</p>
+    </mat-card-content>
+  </ng-container>
+</mat-card>

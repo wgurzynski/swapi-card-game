@@ -1,0 +1,51 @@
+.example-card {
+  max-width: 400px;
+  min-height: 700px;
+
+  .mat-card-title, h2 {
+    color: #424242;
+    font-weight: 600 !important;
+    font-size: 25px !important;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+
+  .mat-mdc-card-subtitle {
+    padding-bottom: 10px;
+  }
+
+  .mat-mdc-card-content {
+    padding-top: 16px;
+  }
+
+  .glow {
+    color: #d5a957;
+    font-size: 20px;
+    animation: fadeIn 2s;
+  }
+}
+
+#winner-indicator {
+  display: flex;
+  flex-direction: row-reverse;
+
+  mat-icon {
+    font-size: 150px;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    margin-right: -10px;
+    color: #d5a957;
+    animation: fadeIn 2s;
+  }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+
+}
+
+

@@ -1,0 +1,25 @@
+<div class="wrapper" [ngClass]="(gameType$ | async)">
+  <span *ngIf="isLoading$ | async" class="loader" >
+    <mat-spinner [color]="'warn'"></mat-spinner>
+  </span>
+  <ng-container *ngIf="cardDecks?.length && (isLoading$ | async) === false">
+    <span class="cards-container">
+      <ng-container *ngFor="let cardDeck of cardDecks; index as i; let first = first">
+        <ng-container *ngIf="(cardDecks | FightResult: i: activeBatchCardNumber) as fightResult">
+        <app-card
+              [card]="cardDeck[activeBatchCardNumber]"
+              [image]="cardImages[i]"
+              [gameType]="$any(gameType$ | async)"
+              [winner]="fightResult | isWinner">
+        </app-card>
+        <span id="draw-wrapper" *ngIf="first">
+          <span id="draw" *ngIf="fightResult | isDraw">DRAW</span>
+        </span>
+        </ng-container>
+      </ng-container>
+    </span>
+    <button mat-fab color="warn" aria-label="Swipe right button" (click)="changeActiveCards()">
+      <mat-icon>swipe_right</mat-icon>
+    </button>
+  </ng-container>
+</div>

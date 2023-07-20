@@ -1,0 +1,29 @@
+mat-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+mat-progress-bar {
+  width: 400px;
+}
+
+.counter-section {
+  width: 35vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.player {
+  color: #424242;
+  &-one {
+
+  }
+  &-two {
+
+  }
+
+  .counter {
+    letter-spacing: 5px;
+  }
+}

@@ -1,0 +1,30 @@
+<span id="dialog-wrapper">
+  <mat-icon class="icon-left">emoji_events</mat-icon>
+  <span *ngIf="winner === FIGHT_RESULT.DRAW; else winnerDialog">
+    <h1 mat-dialog-title>Its a Draw!</h1>
+    <div mat-dialog-content>
+      <p>Competition was real close</p>
+      <p>And results with a DRAW</p>
+      <p>Dont stop there</p>
+      <p>Test Your luck in next bouts</p>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close (click)="closeModal.emit()" cdkFocusInitial>Start over</button>
+    </div>
+  </span>
+  <ng-template #winnerDialog>
+    <span>
+      <h1 mat-dialog-title>{{winner}} Congratulation!</h1>
+      <div mat-dialog-content>
+        <p>You are awarded with {{ 1 * MULTIPLIER}} points</p>
+        <p>Dont stop there</p>
+        <p>Test Your luck in next bouts</p>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-button mat-dialog-close (click)="closeModal.emit()" cdkFocusInitial>Start over</button>
+      </div>
+    </span>
+  </ng-template>
+  <mat-icon class="icon-right">emoji_events</mat-icon>
+</span>
+

@@ -1,0 +1,27 @@
+#dialog-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow: hidden;
+
+  mat-icon {
+    font-size: 200px;
+    height: 200px;
+    width: 200px;
+    color: #d5a957;
+    padding-top: 20px;
+
+  &.icon-left {
+    transform: rotate(-25deg);
+  }
+
+  &.icon-right {
+    transform: rotate(25deg);
+  }
+}
+
+  .mat-mdc-dialog-actions {
+    justify-content: center;
+  }
+}
+

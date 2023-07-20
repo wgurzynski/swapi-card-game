@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>You have pending battle</h1>
+<div mat-dialog-content>
+  <p>If You continue, its current progress will be lost</p>
+  <p>Do You wish to proceed, anyway?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="closeModal.emit(true)">Yes</button>
+  <button mat-button mat-dialog-close (click)="closeModal.emit(false)" cdkFocusInitial>No</button>
+</div>

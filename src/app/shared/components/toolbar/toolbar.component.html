@@ -1,0 +1,20 @@
+<mat-toolbar color="red">
+  <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle *ngFor="let entity of entityTypes"
+                       (change)="onGameTypeChange(entity)"
+                       [disabled]="isLoading$ | async"
+                       [checked]="entity === (selectedEntityType$ | async)" value="entity">{{ entity | uppercase }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <mat-progress-bar
+    class="example-margin"
+    color="warn"
+    mode="determinate"
+    [value]="filledProgressPercentage$ | async"
+    [bufferValue]="bufferValue$ | async">
+  </mat-progress-bar>
+  <div class="counter-section">
+      <div class="player player-one">P1: <span class="counter">{{((p1Score$ | async) || 0 ) * MULTIPLIER}}pts</span></div>
+      <div class="player player-two">P2: <span class="counter">{{((p2Score$ | async) || 0 ) * MULTIPLIER}}pts</span></div>
+  </div>
+</mat-toolbar>

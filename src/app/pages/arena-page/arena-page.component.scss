@@ -1,0 +1,59 @@
+.wrapper {
+  height: calc(100% - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &.planets {
+    background: url("../../../assets/img/backgrounds/planets_background.jpg") no-repeat;
+    background-size: cover;
+  }
+
+  &.starships {
+    background: url("../../../assets/img/backgrounds/battleship_background.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  &.people {
+    background: url("../../../assets/img/backgrounds/planet_battleground_background.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .mat-icon{
+    font-size:48px !important;
+    width:48px;
+    height:48px;
+  }
+
+  .mat-mdc-fab {
+    width: 100px;
+    height: 100px;
+  }
+
+  #draw-wrapper {
+    position: absolute;
+    top: 45vh;
+    #draw {
+      color: gold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 50px;
+      position: relative;
+      animation: fadeIn 2s;
+      @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+    }
+  }
+}
