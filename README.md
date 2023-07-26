@@ -1,8 +1,8 @@
 # Starwars themed war-like card game
 
-This project was build using data from  [SWAPI](https://swapi.dev/)
+This project was build using data from  [SWAPI](https://swapi.dev/);
 
-All images used are AI Generated
+All images used are AI Generated [Adobe Firefly](https://firefly.adobe.com/);
 
 ## Development server
 
